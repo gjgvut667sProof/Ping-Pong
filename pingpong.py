@@ -53,9 +53,9 @@ font = font.Font(None,35)
 lose1 = font.render("Player 1 LOST!", True, (180,0,0))
 lose2 = font.render("Player 2 LOST!", True, (180,0,0))
 
-racket1 = Player("racket.png", 5, 200, 4, 50, 150)
-racket2 = Player("racket.png", 5, 200, 4, 50, 150)
-ball = GameSprite("tenis_ball.png", 200,200,4,50,50)
+racket1 = Player("racketenemy.png", 5, 200, 4, 50, 150)
+racket2 = Player("racketfriendly.png", 520, 200, 4, 50, 150)
+ball = GameSprite("tennisball.jpg", 200,200,4,50,50)
 
 while game:
     for e in event.get():
