@@ -8,8 +8,8 @@ from time import *
 game = True
 finish = False
 game_over = False
-clock = time.Clock()
-FPS = 60
+#clock = time.Clock()
+FPS = 20
 
 
 
@@ -30,15 +30,15 @@ class Player(GameSprite):
     def update_l(self):
         keys = key.get_pressed()
         if keys[K_a] and self.rect.y > 5:
-            self.rect.x -= self.speed
+            self.rect.y -= self.speed
         if keys[K_d] and self.rect.x < win_width - 80 :
-            self.rect.x += self.speed
-    def update_l(self):
+            self.rect.y += self.speed
+    def update_r(self):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.y > 5:
-            self.rect.x -= self.speed
+            self.rect.y -= self.speed
         if keys[K_DOWN] and self.rect.x < win_width - 80 :
-            self.rect.x += self.speed
+            self.rect.y += self.speed
 back = (200,255,255)
 win_width = 700
 win_height = 500
@@ -73,7 +73,7 @@ while game:
         speed_x *= 1
 
     
-    if ball.rect.y > win_height - 50 or ball ball.rect.y < 0:
+    if ball.rect.y > win_height - 50 or ball.rect.y < 0:
         speed_y *= -1
 
     if ball.rect.x < 0:
@@ -91,5 +91,5 @@ while game:
 
 
     display.update()
-    clock.tick(FPS)
+    sleep(FPS/1000)
 
